@@ -1,1 +1,32 @@
-<p>navbar works!</p>
+<nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['/home']">Inicio</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['/adopta']">Adopta</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['/galeria']">Galeria</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['/reporte']">Reportes</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['/about']">Nosotros</a>
+            </li>
+        </ul>
+
+        <div id="buscoMascota" class="form-inline my-2 my-lg-0">
+          <input type="text" class="form-control my-sm-2" placeholder="Buscar" #buscarTexto (keyup.enter)="buscarMascota(buscarTexto.value)">
+          <button class="btn btn-outline-light my-2 my-sm-0" (click)="buscarMascota(buscarTexto.value)" type="button">Buscar</button>
+        </div>
+      </div>
+    </div>
+</nav>
