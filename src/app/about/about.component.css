@@ -1,0 +1,25 @@
+#texto{
+    text-align: center;
+    color: black;
+}
+
+img{
+    width: 70%;
+    height: 70%;
+}
+
+.card {
+    border: none;
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 20px 48px rgba(52, 14, 222, 0.1);
+}
+  
+*{
+    background-image: url(../../assets/img/fondo-nosotros.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
