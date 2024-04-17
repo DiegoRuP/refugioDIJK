@@ -22,7 +22,7 @@ export class MascotaComponent {
   }
 
   recuperarDatos(){
-    console.log("Entré");
+    console.log("Estoy dentro");
 
     this.adopcionesService.retornar().subscribe({
       next: this.successRequest.bind(this),
