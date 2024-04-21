@@ -1,7 +1,5 @@
 body{
-    background-image: url("../../assets/img/fondoInicio.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+  background-color: #D1BB9E;
   }
   
   .carousel-inner .carousel-item img {
@@ -11,11 +9,12 @@ body{
   
   #informacion {
     max-width: 80%;
-    background-color: #d9ffdb;
+    background-color: #EAD8C0;
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
+    text-align: center;
   }
   
   h2 {
@@ -65,11 +64,28 @@ body{
     margin: 50px;
   }
   
-  h1 {
-    color: white;
-    text-align: center;
-    font-size: 100px;
-    margin-bottom: 20px;
+  .btnAdoptar{
+    background-image: linear-gradient(to right, #AF8260, #803D3B); 
+    color: #fff;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Arial Rounded MT', sans-serif;
+    font-size: 20px;
+    margin-bottom: 20px; 
+    transition: transform 0.3s ease, background-color 0.3s ease;     
   }
-  
-  
+
+/* Efecto hover */
+
+.btnAdoptar:hover {
+  transform: translateY(-5px); 
+  background-color: #645A52; 
+}
+
+.btnAdoptar:active {
+  transform: scale(0.95);
+  transition: transform 0.2s ease;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
