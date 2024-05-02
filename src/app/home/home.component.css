@@ -1,14 +1,10 @@
-body{
-  background-color: #D1BB9E;
-  }
-  
   .carousel-inner .carousel-item img {
     display: block;
     margin: 0 auto;
   }
   
   #informacion {
-    max-width: 80%;
+    max-width: 100%;
     background-color: #EAD8C0;
     padding: 40px;
     border-radius: 10px;
