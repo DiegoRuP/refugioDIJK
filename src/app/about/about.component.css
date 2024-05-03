@@ -11,13 +11,24 @@ img{
 .card {
     border: none;
     transition: box-shadow 0.3s ease;
+    background-color: transparent;
 }
 
 .card:hover {
     box-shadow: 0 20px 48px rgba(52, 14, 222, 0.1);
 }
+
+.informacion{
+    background-color: beige;
+    color: darkgray;
+    justify-content: center;
+    text-align: center;
+    max-width: 50%;
+    margin-left: 25%;
+    padding: 15px;
+}
   
-*{
+body{
     background-image: url(../../assets/img/fondo-nosotros.png);
     background-size: cover;
     background-repeat: no-repeat;
