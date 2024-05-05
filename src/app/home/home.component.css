@@ -1,11 +1,14 @@
-  .carousel-inner .carousel-item img {
-    display: block;
-    margin: 0 auto;
-  }
-  
+.carousel-inner .carousel-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 20px;
+}
+
   #informacion {
     max-width: 100%;
-    background-color: #EAD8C0;
+    background-color: #b99d81;
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -14,13 +17,13 @@
   }
   
   h2 {
-    color: #333;
+    color: #535942;
     text-align: center;
     margin-bottom: 20px;
   }
   
   p {
-    color: #666;
+    color: black;
     line-height: 1.6;
     margin-bottom: 20px;
   }
@@ -49,15 +52,18 @@
   }
   
   .ImagenesGatoPerro {
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
   }
   
   .ImagenesGatoPerro img {
     max-width: 300px;
     max-height: 200px; 
     margin: 50px;
+    box-sizing: border-box;
   }
   
   .btnAdoptar{
@@ -84,4 +90,21 @@
   transform: scale(0.95);
   transition: transform 0.2s ease;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+main{
+  width: 70%;
+  margin: auto;
+  border-radius: 15px;
+  background-color: #AF8260;
+  padding: 40px;
+  border: black 2px dashed;
+
+  box-shadow: 1px 3px 4px black;
+}
+
+hr{
+  border: dashed 2px black;
+  margin: 20px;
+  color: #AF8260;
 }
