@@ -105,6 +105,31 @@ main{
 
 hr{
   border: dashed 2px black;
-  margin: 20px;
+  margin: 40px;
   color: #AF8260;
+}
+
+.videoAdopcion {
+  width: 60%;
+  margin: auto;
+  
+}
+
+iframe{
+  border-radius: 15px;
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* Proporción 16:9 para videos */
+  height: 0;
+  overflow: hidden;
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
