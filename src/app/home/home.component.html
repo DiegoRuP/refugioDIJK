@@ -71,10 +71,23 @@
             <img src="../../assets/img/CaraPerro.png" alt="">
             <img src="../../assets/img/CaraGato.png" alt="">
           </div>
+          <div class="videoAdopcion">
+            <iframe 
+            width="560" 
+            height="315" 
+            [src]="video | videoAdoptar:'https://www.youtube.com/embed/'" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-inpicture" 
+            allowfullscreen>
+          </iframe>
+          </div>
+          <br> <br>
           <button class="btnAdoptar"><h1>¡Adopta Ya!</h1></button>
-
         </section>
-        
+
+
+
+    
         <br> <br>
       </main>
     </body>
