@@ -18,7 +18,7 @@ export class FormularioComponent implements OnInit {
   dia: number=0;
   hora: number=0;
 
-  citas: any[] = []; // Lista para almacenar las citas
+  citas: any[] = [];
 
   constructor() {}
 
@@ -30,10 +30,10 @@ export class FormularioComponent implements OnInit {
       dia: this.dia,
       hora: this.hora
     };
-    this.citas.push(nuevaCita); // Agregar la nueva cita a la lista de citas
-    localStorage.setItem('citas', JSON.stringify(this.citas)); // Guardar la lista de citas en localStorage
+    this.citas.push(nuevaCita); //agregar la cita a la lista
+    localStorage.setItem('citas', JSON.stringify(this.citas)); //guardar la lista en localstorage
     console.log('Cita guardada:', nuevaCita);
-    // Limpiar los datos del formulario después de guardar la cita
+    //limpiar los datos del formulario
     this.nombre='';
     this.correo='';
     this.telefono=0;
@@ -44,7 +44,7 @@ export class FormularioComponent implements OnInit {
   ngOnInit(){
     const citasGuardadas = localStorage.getItem('citas');
     if (citasGuardadas) {
-      this.citas = JSON.parse(citasGuardadas); // Recuperar las citas del localStorage
+      this.citas = JSON.parse(citasGuardadas); //recuperar la lista del localstorage
     } 
   }
 }
