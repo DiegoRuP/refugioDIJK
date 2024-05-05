@@ -73,7 +73,6 @@
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    font-family: 'Arial Rounded MT', sans-serif;
     font-size: 20px;
     margin-bottom: 20px; 
     transition: transform 0.3s ease, background-color 0.3s ease;     
@@ -93,7 +92,7 @@
 }
 
 main{
-  width: 70%;
+  width: 90%;
   margin: auto;
   border-radius: 15px;
   background-color: #AF8260;
@@ -102,6 +101,7 @@ main{
 
   box-shadow: 1px 3px 4px black;
 }
+
 
 hr{
   border: dashed 2px black;

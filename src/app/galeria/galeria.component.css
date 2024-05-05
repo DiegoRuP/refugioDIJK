@@ -1,12 +1,24 @@
 .containerGaleria {
-    max-width: 100%;
     width: 90%;
     margin: auto;
+    border-radius: 15px;
+    background-color: #AF8260;
     padding: 40px;
+    border: black 2px dashed;
+
+    box-shadow: 1px 3px 4px black;
+  }
+
+  hr{
+    border: dashed 2px black;
+    margin: 20px;
+    color: #AF8260;
   }
   
   .tituloGaleria {
     margin-bottom: 2rem;
+    text-align:center;
+    
   }
   
   .galeria {
@@ -52,4 +64,28 @@
     border-radius: 5px;
     object-fit: cover;
   }
+
+  /* Agrega este estilo para el pie de imagen */
+.pieImagenMan {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    border-radius: 0 0 5px 5px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 0.3s ease-in-out; /* Efecto de transición */
+  }
+  
+  .imagenMan {
+    position: relative; /* Permite que el pie de imagen se posicione correctamente */
+  }
+  
+  /* Mostrar pie de imagen al pasar el mouse */
+  .imagenMan:hover .pieImagenMan {
+    opacity: 1;
+  }
+  
   
