@@ -1,0 +1,9 @@
+<h1 class="animate__animated animate__bounce">{{mascota.nombre}} <small>{{mascota.animal}}</small></h1>
+<hr>
+<div class="row animated fadeIn fast">
+    <div class="col md-4 text-center">
+        <img width="300px" src="{{mascota.imagen}}" alt="" class="img-fluid">
+        <br><br>
+        <a [routerLink]="['/adopta']" class="btn btn-outline-danger btn-block">Regresar</a>
+    </div>
+</div>

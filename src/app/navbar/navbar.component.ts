@@ -10,10 +10,10 @@ import { RouterModule, Router } from '@angular/router';
 })
 export class NavbarComponent {
 
-  constructor(private router: Router) { }
+  constructor(private router:Router) { }
 
-  buscarMascota(nombre: string) {
-    this.router.navigate(['/buscador', nombre]);
+  buscarMascota(raza: string) {
+    this.router.navigate(['/buscador', raza]);
   }
 
 }
