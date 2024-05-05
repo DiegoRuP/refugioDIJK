@@ -64,13 +64,33 @@
             </div>
           </div>
           <hr>
+
+          <!-- Video de pipe proteccion -->
+
+          <h2>Lo importante que es adoptar</h2>
+
+          <div class="videoAdopcion">
+            <div class="videoWrapper">
+              <iframe 
+                width="560" 
+                height="315" 
+                [src]="video | videoAdoptar:'https://www.youtube.com/embed/'" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-inpicture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+
+          <hr>
+          <h2>Elige a tu nuevo mejor amigo</h2>
           <!-- Imagenes de Gato Y Perro -->
           <div class="ImagenesGatoPerro">
             <img src="../../assets/img/CaraPerro.png" alt="">
             <img src="../../assets/img/CaraGato.png" alt="">
           </div>
-          <button class="btnAdoptar" ><a (click)="redirectToAdopta()"><h1>¡Adopta Ya!</h1></a></button>
-
+          <!-- Boton para adoptar -->
+          <button class="btnAdoptar"><a (click)="redirectToAdopta()"><h1>¡Adopta Ya!</h1></a></button>
         </section>
       </main>
       <br><br>

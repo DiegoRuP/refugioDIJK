@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
+import { VideoAdoptarPipe } from './video-adoptar.pipe';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [RouterOutlet, VideoAdoptarPipe],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -16,4 +18,5 @@ export class HomeComponent {
     this.router.navigate(['/adopta']);
   }
 
+  video:string="Jv1iolzbvZg";
 }

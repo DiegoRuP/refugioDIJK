@@ -1,0 +1,10 @@
+.containerAdopta{
+    width: 70%;
+    margin: auto;
+    border-radius: 15px;
+    background-color: #AF8260;
+    padding: 40px;
+    border: black 2px dashed;
+
+    box-shadow: 1px 3px 4px black;
+}
