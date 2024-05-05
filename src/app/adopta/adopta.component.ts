@@ -1,8 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { AdopcionesService } from '../shared/adopciones.service';
-import { AdoptaMascota } from '../interfaces/adopcion';
 import { RouterModule } from '@angular/router';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-adopta',
@@ -13,11 +10,5 @@ import { ActivatedRoute } from '@angular/router';
 })
 
 export class AdoptaComponent {
-  @Input() mascota!: AdoptaMascota[];
 
-  constructor(public adopcionesService:AdopcionesService, public activatedRoute: ActivatedRoute){
-    this.activatedRoute.params.subscribe(params => {
-      // this.mascota = AdopcionesService.getUnHeroe(params['id']);
-    })
-  }
 }
