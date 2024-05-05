@@ -5,10 +5,11 @@ import { AdoptaMascota } from '../interfaces/adopcion';
 @Component({
   selector: 'app-adopta',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './adopta.component.html',
   styleUrl: './adopta.component.css'
 })
+
 export class AdoptaComponent {
 
   adopciones:AdoptaMascota[] = [];

@@ -6,12 +6,12 @@ import { GaleriaComponent } from './galeria/galeria.component';
 import { AboutComponent } from './about/about.component';
 import { ReporteComponent } from './reporte/reporte.component';
 import { NavbarComponent } from './navbar/navbar.component';
-
+import { FooterComponent } from './footer/footer.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterModule, NavbarComponent, HomeComponent, AdoptaComponent, GaleriaComponent, AboutComponent, ReporteComponent],
+  imports: [RouterOutlet, RouterModule, NavbarComponent, HomeComponent, AdoptaComponent, GaleriaComponent, AboutComponent, ReporteComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
