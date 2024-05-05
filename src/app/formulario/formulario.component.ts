@@ -11,29 +11,29 @@ import { CommonModule } from '@angular/common';
 })
 
 export class FormularioComponent implements OnInit {
+
   nombre: string='';
   correo: string='';
   telefono: number=0;
   dia: number=0;
   hora: number=0;
 
-  datosRecuperados: any;
+  citas: any[] = []; // Lista para almacenar las citas
 
-  constructor() {
-    this.datosRecuperados={};
-  }
+  constructor() {}
 
   onSubmit(){
-    const datos={
+    const nuevaCita = {
       nombre: this.nombre,
       correo: this.correo,
       telefono: this.telefono,
       dia: this.dia,
       hora: this.hora
     };
-    localStorage.setItem('datosForm', JSON.stringify(datos));
-    console.log('Datos guardados');
-    //limpiar datos del formulario
+    this.citas.push(nuevaCita); // Agregar la nueva cita a la lista de citas
+    localStorage.setItem('citas', JSON.stringify(this.citas)); // Guardar la lista de citas en localStorage
+    console.log('Cita guardada:', nuevaCita);
+    // Limpiar los datos del formulario después de guardar la cita
     this.nombre='';
     this.correo='';
     this.telefono=0;
@@ -42,16 +42,9 @@ export class FormularioComponent implements OnInit {
   }
 
   ngOnInit(){
-    const datos2=localStorage.getItem('datosForm');
-    if (datos2) {
-      this.datosRecuperados=JSON.parse(datos2);
+    const citasGuardadas = localStorage.getItem('citas');
+    if (citasGuardadas) {
+      this.citas = JSON.parse(citasGuardadas); // Recuperar las citas del localStorage
     } 
-  }
-
-  mostrarDatos: boolean=false;
-
-  mostrarDatosClick() {
-    this.mostrarDatos = true;
-    console.log('Cita guardada');
   }
 }

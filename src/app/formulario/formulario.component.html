@@ -1,23 +1,48 @@
 <h2>Ingresa tus datos para agendar una cita</h2>
-<br><br><br>
+<br><br>
 
 <form (ngSubmit)="onSubmit()">
     <input type="text" [(ngModel)]="nombre" name="nombre" placeholder="Nombre">
+    <br>
+
     <input type="text" [(ngModel)]="correo" name="correo" placeholder="Correo electrónico">
+    <br>
+
+    <label for="telefono">Número telefónico</label>
     <input type="number" [(ngModel)]="telefono" name="telefono" placeholder="Número telefónico">
+    <br>
+
+    <label for="dia">Día de la cita</label>
     <input type="number" [(ngModel)]="dia" name="dia" placeholder="Día de la cita">
-    <input type="number" [(ngModel)]="hora" name="hora" placeholder="Hora de la cita">
+    <br>
+
+    <label for="hora">Hora de la cita</label>
+    <select [(ngModel)]="hora" name="hora" placeholder="Hora de la cita">
+        <option value="10">10:00 AM</option>
+        <option value="11">11:00 AM</option>
+        <option value="12">12:00 PM</option>
+        <option value="13">13:00 PM</option>
+        <option value="14">14:00 PM</option>
+        <option value="12">15:00 PM</option>
+        <option value="12">16:00 PM</option>
+    </select>
+
     <br><br>
-    <button type="submit">Guardar</button>
+    <button type="submit">Agendar Cita</button>
 </form>
 
-@if (mostrarDatos) {
-    <p>Nombre: {{ datosRecuperados?.nombre }}</p>
-    <p>Correo electrónico: {{ datosRecuperados?.correo }}</p>
-    <p>Telefóno: {{ datosRecuperados?.telefono }}</p>
-    <p>Día: {{ datosRecuperados?.dia }}</p>
-    <p>Hora: {{ datosRecuperados?.hora }}</p>
-}
+<br><br><br><br><br>
 
-<br>
-<button (click)="mostrarDatosClick()">Mostrar Datos</button>
+<!-- mostrar las citas -->
+@if (citas.length >0) {
+    <h2>Citas Agendadas:</h2>
+    <br>
+    @for (cita of citas; track cita) {
+        <p>Nombre: {{ cita.nombre }}</p>
+        <p>Correo electrónico: {{ cita.correo }}</p>
+        <p>Telefóno: {{ cita.telefono }}</p>
+        <p>Día: {{ cita.dia }}</p>
+        <p>Hora: {{ cita.hora }}</p>
+        <hr>
+    }
+}
