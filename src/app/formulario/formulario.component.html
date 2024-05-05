@@ -1,0 +1,14 @@
+<form (ngSubmit)="onSubmit()">
+    <input type="text" [(ngModel)]="nombre" placeholder="Nombre">
+    <input type="email" [(ngModel)]="correo" placeholder="Correo electrónico">
+    <input type="text" [(ngModel)]="telefono" placeholder="Número telefónico">
+    <input type="text" [(ngModel)]="dia" placeholder="Día de la cita">
+    <input type="text" [(ngModel)]="hora" placeholder="Hora de la cita">
+    <button type="submit">Guardar</button>
+</form>
+
+<p>Nombre: {{ datosRecuperados.nombre }}</p>
+<p>Correo electrónico: {{ datosRecuperados.correo }}</p>
+<p>Telefóno: {{datosRecuperados.telefono}}</p>
+<p>Día: {{datosRecuperados.dia}}</p>
+<p>Hora: {{datosRecuperados.hora}}</p>
