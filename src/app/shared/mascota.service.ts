@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { AdoptaMascota } from '../interfaces/adopcion';
+import { MASCOTAS } from '../misMascotas';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MascotaService {
 
-  private mascotas: AdoptaMascota[] = [];
+  private mascotas: AdoptaMascota[] = MASCOTAS;
 
   constructor() { }
 
