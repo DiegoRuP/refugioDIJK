@@ -8,12 +8,13 @@
                     <img src="{{m.imagen}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{m.nombre}}</h5>
+                        <h6 class="card-title">{{m.raza}}</h6>
                         <p class="card-text">{{m.descripcion}}</p>
                         <p class="card-text"><small class="text-muted">{{m.tiempo}} meses</small></p>
                     </div>
 
                     <a [routerLink]="['/mascota',i]" class="mb-3 btn btn-outline-dark btn-block">Adoptame</a>
-                    
+
                 </div>     
             </div>
         }
