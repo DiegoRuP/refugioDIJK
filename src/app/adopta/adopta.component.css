@@ -13,3 +13,21 @@
     margin-bottom: 2rem;
     text-align:center;
 }
+
+.card{
+    background-color: #b99d81;
+    padding: 20px;
+    border-radius: 20px;
+    border: dashed black 3px ;
+}
+
+.card img{
+    height: 60%;
+}
+
+hr{
+    border: dashed 2px black;
+    margin: 40px;
+    color: #AF8260;
+
+}
