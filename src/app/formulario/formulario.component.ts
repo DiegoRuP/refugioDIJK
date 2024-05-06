@@ -12,11 +12,11 @@ import { CommonModule } from '@angular/common';
 
 export class FormularioComponent implements OnInit {
 
-  nombre: string='';
-  correo: string='';
-  telefono: number=0;
-  dia: number=0;
-  hora: number=0;
+  nombre: string ='';
+  correo: string ='';
+  telefono: number =0;
+  hora: number =0;
+  fecha: string ='';
 
   citas: any[] = [];
 
@@ -27,19 +27,23 @@ export class FormularioComponent implements OnInit {
       nombre: this.nombre,
       correo: this.correo,
       telefono: this.telefono,
-      dia: this.dia,
-      hora: this.hora
+      hora: this.hora,
+      fecha: this.fecha
     };
-    this.citas.push(nuevaCita); //agregar la cita a la lista
-    localStorage.setItem('citas', JSON.stringify(this.citas)); //guardar la lista en localstorage
-    console.log('Cita guardada:', nuevaCita);
-    //limpiar los datos del formulario
+  
     this.nombre='';
     this.correo='';
     this.telefono=0;
-    this.dia=0; 
     this.hora=0;
+  
+    this.citas.push(nuevaCita); // agregar la cita a la lista
+    localStorage.setItem('citas', JSON.stringify(this.citas)); // guardar la lista en localStorage
+    console.log('Cita guardada:', nuevaCita);
+  
+    const fechaSeleccionada = (document.getElementById('fecha') as HTMLInputElement).value;
+    localStorage.setItem('fechaSeleccionada', fechaSeleccionada);
   }
+  
 
   ngOnInit(){
     const citasGuardadas = localStorage.getItem('citas');

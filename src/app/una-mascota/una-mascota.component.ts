@@ -5,6 +5,7 @@ import { MascotaService } from '../shared/mascota.service';
 import { AdoptaMascota } from '../interfaces/adopcion';
 import { FormularioComponent } from '../formulario/formulario.component';
 
+
 @Component({
   selector: 'app-una-mascota',
   standalone: true,
@@ -15,12 +16,10 @@ import { FormularioComponent } from '../formulario/formulario.component';
 export class UnaMascotaComponent {
   
     @Input() mascota!:AdoptaMascota;
-  
     constructor(public mascotaService: MascotaService, public ActivatedRoute: ActivatedRoute) { 
       this.ActivatedRoute.params.subscribe(params => {
         this.mascota = this.mascotaService.getUnaAdopcion(params['id']);
       }
       )
-    }
-    
+    } 
 }
