@@ -1,1 +1,48 @@
-<p>reporte works!</p>
+<div>
+    <h2>Citas Pasadas</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Teléfono</th>
+          <th>Hora</th>
+          <th>Fecha</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cita of citasPasadas">
+          <td>{{ cita.nombre }}</td>
+          <td>{{ cita.correo }}</td>
+          <td>{{ cita.telefono }}</td>
+          <td>{{ cita.hora }}</td>
+          <td>{{ cita.fecha }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <div>
+    <h2>Citas Futuras</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Teléfono</th>
+          <th>Hora</th>
+          <th>Fecha</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cita of citasFuturas">
+          <td>{{ cita.nombre }}</td>
+          <td>{{ cita.correo }}</td>
+          <td>{{ cita.telefono }}</td>
+          <td>{{ cita.hora }}</td>
+          <td>{{ cita.fecha }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
