@@ -29,8 +29,7 @@ export class AdoptaComponent {
     console.log("Estoy dentro");
 
     this.adopcionesService.retornar().subscribe({
-      next: this.successRequest.bind(this),
-      error: (err) => (console.log(err))
+      next: this.successRequest.bind(this)
     });
   }
 
