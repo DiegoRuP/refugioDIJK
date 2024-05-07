@@ -26,7 +26,20 @@ export class FormularioComponent implements OnInit {
 
   constructor() {}
 
+  mostrarError : boolean = false;
+
+  mostrarExito : boolean = false;
+
   onSubmit(){
+    //validar campos
+    if (!this.nombre || !this.correo || !this.telefono || !this.hora || !this.fecha) {
+      this.mostrarError = true;
+      setTimeout(() => {
+        this.mostrarError = false;
+      }, 3000); 
+      return; 
+    }
+
     const nuevaCita = {
       nombre: this.nombre,
       correo: this.correo,
@@ -36,11 +49,21 @@ export class FormularioComponent implements OnInit {
       nombreMascota: this.nombreMascota
     };
   
+    //limpiar campos
     this.nombre='';
     this.correo='';
     this.telefono=0;
     this.hora=0;
-    
+    this.fecha='';
+
+    this.mostrarError = false;
+
+    this.mostrarExito = true;
+
+    //ocultar alerta de exito
+    setTimeout(() => {
+      this.mostrarExito = false;
+    }, 3000);
   
     this.citas.push(nuevaCita); // agregar la cita a la lista
     localStorage.setItem('citas', JSON.stringify(this.citas)); // guardar la lista en localStorage

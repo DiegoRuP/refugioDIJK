@@ -29,6 +29,16 @@ select {
   border-radius: 3px;
 }
 
+.alert-danger{
+  background-color: transparent;
+  border: none;
+  color: crimson;
+  text-align: center;
+}
 
-
-  
+.alert-success{
+  background-color: transparent;
+  border: none;
+  color: green;
+  text-align: center;
+}
