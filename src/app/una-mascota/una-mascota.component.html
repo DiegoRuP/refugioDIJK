@@ -7,7 +7,6 @@
             <br><br>
             <a [routerLink]="['/adopta']" class="btn btn-outline-danger btn-block">Regresar</a>
         </div>
-
         <div class="col md-8">
             <h3>{{mascota.nombre}}</h3>
             <hr>
@@ -16,18 +15,17 @@
             </p>
             <hr>
             <p>
-                <b>Edad:</b> {{mascota.edad}} años
+                <b>Edad:</b> {{mascota.edad}}
             </p>
             <p>
                 <b>Color:</b> {{mascota.color}}
             </p>
             <p>
-                <b>Tiempo buscando un hogar:</b> {{mascota.tiempo}} meses 
+                <b>Tiempo:</b> {{mascota.tiempo}}
             </p>
             <hr>
-
+            <app-formulario [nombreMascota]="mascota.nombre"></app-formulario>
         </div>
-
 </div>
 
 </div>
