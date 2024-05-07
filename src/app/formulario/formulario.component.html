@@ -30,3 +30,16 @@
 </form>
 
 
+<div class="alertas">
+    <div class="alert alert-danger" role="alert">
+        @if (mostrarError) {
+            Por favor, completa todos los campos
+        }
+    </div>
+    
+    <div class="alert alert-success" role="alert">
+        @if (mostrarExito) {
+            Cita agendada con éxito
+        }
+    </div>
+</div>
