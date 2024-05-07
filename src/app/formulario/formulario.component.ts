@@ -27,8 +27,9 @@ export class FormularioComponent implements OnInit {
   constructor() {}
 
   mostrarError : boolean = false;
-  mensajeDias : boolean = false
-  errorMensaje: string = ''; // Agrega esta línea
+  mensajeDias : boolean = false;
+  errorMensaje: string = '';
+  mensajeHora: boolean= false;
 
   mostrarExito : boolean = false;
 
@@ -42,17 +43,27 @@ export class FormularioComponent implements OnInit {
       }, 3000); 
       return; 
     }
-    const fechaActual = new Date();
+    
     const fechaSeleccionada = new Date(this.fecha);
-        if (fechaSeleccionada < fechaActual) {
-      // Mostrar error si la fecha seleccionada es anterior a la fecha actual
-      this.mensajeDias = true;
+    const horaSeleccionada = this.hora;
+    
+    // Obtener citas para la fecha seleccionada
+    const citasFechaSeleccionada = this.citas.filter(cita => {
+      const citaFecha = new Date(cita.fecha);
+      return citaFecha.toDateString() === fechaSeleccionada.toDateString();
+    });
+  
+    // Verificar si ya hay una cita a la misma hora
+    const citaExistente = citasFechaSeleccionada.find(cita => cita.hora === horaSeleccionada);
+  
+    if (citaExistente) {
+      this.mensajeHora = true;
       setTimeout(() => {
-        this.mensajeDias = false;
-      }, 3000); 
-      return; 
+        this.mensajeHora = false;
+      }, 5000);
+      return;
     }
-
+  
     const nuevaCita = {
       nombre: this.nombre,
       correo: this.correo,
@@ -68,11 +79,11 @@ export class FormularioComponent implements OnInit {
     this.telefono=0;
     this.hora=0;
     this.fecha='';
-
+  
     this.mostrarError = false;
-
+  
     this.mostrarExito = true;
-
+  
     // Ocultar alerta de éxito
     setTimeout(() => {
       this.mostrarExito = false;
@@ -81,12 +92,13 @@ export class FormularioComponent implements OnInit {
     this.citas.push(nuevaCita); // Agregar la cita a la lista
     localStorage.setItem('citas', JSON.stringify(this.citas)); // Guardar la lista en localStorage
     console.log('Cita guardada:', nuevaCita);
-
+  
     console.log(this.nombreMascota);
   
     // Guardar la fecha seleccionada en localStorage
     localStorage.setItem('fechaSeleccionada', this.fecha);
   }
+  
 
   ngOnInit(){
     const citasGuardadas = localStorage.getItem('citas');
