@@ -34,8 +34,11 @@
     <div class="alert alert-danger" role="alert">
         @if (mostrarError) {
             Por favor, completa todos los campos
+        }@else if (mensajeDias) {
+            Por favor seleccione un dia posible
         }
     </div>
+
     
     <div class="alert alert-success" role="alert">
         @if (mostrarExito) {

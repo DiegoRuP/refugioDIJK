@@ -23,15 +23,28 @@ export class FormularioComponent implements OnInit {
   constructor() {}
 
   mostrarError : boolean = false;
+  mensajeDias : boolean = false
+  errorMensaje: string = ''; // Agrega esta línea
 
   mostrarExito : boolean = false;
 
   onSubmit(){
-    //validar campos
+    // Validar campos
     if (!this.nombre || !this.correo || !this.telefono || !this.hora || !this.fecha) {
       this.mostrarError = true;
+      this.errorMensaje = "Por favor, completa todos los campos"; // Mensaje genérico
       setTimeout(() => {
         this.mostrarError = false;
+      }, 3000); 
+      return; 
+    }
+    const fechaActual = new Date();
+    const fechaSeleccionada = new Date(this.fecha);
+        if (fechaSeleccionada < fechaActual) {
+      // Mostrar error si la fecha seleccionada es anterior a la fecha actual
+      this.mensajeDias = true;
+      setTimeout(() => {
+        this.mensajeDias = false;
       }, 3000); 
       return; 
     }
@@ -44,7 +57,7 @@ export class FormularioComponent implements OnInit {
       fecha: this.fecha
     };
   
-    //limpiar campos
+    // Limpiar campos
     this.nombre='';
     this.correo='';
     this.telefono=0;
@@ -55,24 +68,23 @@ export class FormularioComponent implements OnInit {
 
     this.mostrarExito = true;
 
-    //ocultar alerta de exito
+    // Ocultar alerta de éxito
     setTimeout(() => {
       this.mostrarExito = false;
     }, 3000);
   
-    this.citas.push(nuevaCita); // agregar la cita a la lista
-    localStorage.setItem('citas', JSON.stringify(this.citas)); // guardar la lista en localStorage
+    this.citas.push(nuevaCita); // Agregar la cita a la lista
+    localStorage.setItem('citas', JSON.stringify(this.citas)); // Guardar la lista en localStorage
     console.log('Cita guardada:', nuevaCita);
   
-    const fechaSeleccionada = (document.getElementById('fecha') as HTMLInputElement).value;
-    localStorage.setItem('fechaSeleccionada', fechaSeleccionada);
+    // Guardar la fecha seleccionada en localStorage
+    localStorage.setItem('fechaSeleccionada', this.fecha);
   }
-  
 
   ngOnInit(){
     const citasGuardadas = localStorage.getItem('citas');
     if (citasGuardadas) {
-      this.citas = JSON.parse(citasGuardadas); //recuperar la lista del localstorage
+      this.citas = JSON.parse(citasGuardadas); // Recuperar la lista del localstorage
     } 
   }
 }
