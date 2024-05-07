@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Input } from '@angular/core';
 
 @Component({
   selector: 'app-formulario',
@@ -10,8 +11,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './formulario.component.css'
 })
 
+
+
 export class FormularioComponent implements OnInit {
 
+  @Input() nombreMascota: string = '';
   nombre: string ='';
   correo: string ='';
   telefono: number =0;
@@ -54,7 +58,8 @@ export class FormularioComponent implements OnInit {
       correo: this.correo,
       telefono: this.telefono,
       hora: this.hora,
-      fecha: this.fecha
+      fecha: this.fecha,
+      nombreMascota: this.nombreMascota
     };
   
     // Limpiar campos
@@ -76,6 +81,8 @@ export class FormularioComponent implements OnInit {
     this.citas.push(nuevaCita); // Agregar la cita a la lista
     localStorage.setItem('citas', JSON.stringify(this.citas)); // Guardar la lista en localStorage
     console.log('Cita guardada:', nuevaCita);
+
+    console.log(this.nombreMascota);
   
     // Guardar la fecha seleccionada en localStorage
     localStorage.setItem('fechaSeleccionada', this.fecha);
@@ -86,5 +93,8 @@ export class FormularioComponent implements OnInit {
     if (citasGuardadas) {
       this.citas = JSON.parse(citasGuardadas); // Recuperar la lista del localstorage
     } 
+  }
+  ordenarCitasPorFecha(citas: any[]): any[] {
+    return citas.sort((a, b) => new Date(a.fecha).getTime() - new Date(b.fecha).getTime());
   }
 }
