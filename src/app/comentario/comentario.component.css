@@ -9,8 +9,12 @@
   }
 
 .formularioComentario{
-    position: relative;
-    left: 30%;
+    margin: auto;
+    text-align: center;
+}
+
+form{
+  margin: auto !important;
 }
 
 .botao{

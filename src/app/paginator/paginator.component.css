@@ -3,3 +3,7 @@
     justify-content: center;
     background-color: #f7dcb9;
 }   
+
+mat-paginator{
+    background-color: #f7dcb9;
+}

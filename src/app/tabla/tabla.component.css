@@ -1,6 +1,8 @@
 table {
  width: 100%;
- background-color: transparent;
+ background-color: #F7DCB9;
+ border-radius: 20px !important;
+ box-shadow: 0 2px 3px;
 }  
 
 th{
