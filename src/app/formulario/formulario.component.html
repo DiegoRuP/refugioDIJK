@@ -31,23 +31,3 @@
     <br><br>
     <button type="submit">Agendar Cita</button>
 </form>
-
-
-<div class="alertas">
-    <div class="alert alert-danger" role="alert">
-        @if (mostrarError) {
-            Por favor, completa todos los campos
-        }@else if (mensajeDias) {
-            Por favor seleccione un dia posible
-        }@else if (mensajeHora) {
-            La hora que quiere, ya esta ocupada, por favor seleccione otra hora
-        }
-    </div>
-
-    
-    <div class="alert alert-success" role="alert">
-        @if (mostrarExito) {
-            Cita agendada con éxito
-        }
-    </div>
-</div>

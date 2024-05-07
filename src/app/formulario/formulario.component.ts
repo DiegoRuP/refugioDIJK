@@ -1,4 +1,5 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Input } from '@angular/core';
@@ -11,15 +12,13 @@ import { Input } from '@angular/core';
   styleUrl: './formulario.component.css'
 })
 
-
-
 export class FormularioComponent implements OnInit {
 
   @Input() nombreMascota: string = '';
   nombre: string ='';
   correo: string ='';
-  telefono: number =0;
-  hora: number =0;
+  telefono: number = 0;
+  hora: number = 0;
   fecha: string ='';
 
   citas: any[] = [];
@@ -36,15 +35,30 @@ export class FormularioComponent implements OnInit {
   onSubmit(){
     // Validar campos
     if (!this.nombre || !this.correo || !this.telefono || !this.hora || !this.fecha) {
-      this.mostrarError = true;
-      this.errorMensaje = "Por favor, completa todos los campos"; // Mensaje genérico
-      setTimeout(() => {
-        this.mostrarError = false;
-      }, 3000); 
+      Swal.fire({
+        icon: 'error',
+        title: 'Error...',
+        text: 'Por favor, completa todos los campos'
+      });
       return; 
     }
-    
+  
+    // Convertir la fecha ingresada a un objeto Date
     const fechaSeleccionada = new Date(this.fecha);
+  
+    // Obtener la fecha actual
+    const fechaActual = new Date();
+  
+    // Verificar si la fecha seleccionada es anterior a la fecha actual
+    if (fechaSeleccionada < fechaActual) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error...',
+        text: 'Por favor, ingresa una fecha válida'
+      });
+      return;
+    }
+    
     const horaSeleccionada = this.hora;
     
     // Obtener citas para la fecha seleccionada
@@ -57,10 +71,11 @@ export class FormularioComponent implements OnInit {
     const citaExistente = citasFechaSeleccionada.find(cita => cita.hora === horaSeleccionada);
   
     if (citaExistente) {
-      this.mensajeHora = true;
-      setTimeout(() => {
-        this.mensajeHora = false;
-      }, 5000);
+      Swal.fire({
+        icon: 'error',
+        title: 'Error...',
+        text: 'La hora que quiere, ya está ocupada, por favor seleccione otra hora'
+      });
       return;
     }
   
@@ -95,9 +110,15 @@ export class FormularioComponent implements OnInit {
   
     console.log(this.nombreMascota);
   
-    // Guardar la fecha seleccionada en localStorage
     localStorage.setItem('fechaSeleccionada', this.fecha);
+  
+    Swal.fire({
+      icon: 'success',
+      title: '¡Cita agendada!',
+      text: 'La cita se ha agendado correctamente.'
+    });
   }
+  
   
 
   ngOnInit(){
