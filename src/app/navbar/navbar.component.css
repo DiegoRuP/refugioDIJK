@@ -24,3 +24,7 @@ nav{
 img{
     height: 4rem;
 }
+
+.nav-link{
+    font-weight: bold;
+}

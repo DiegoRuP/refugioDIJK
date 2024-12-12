@@ -4,17 +4,21 @@ import { AdoptaComponent } from './adopta/adopta.component';
 import { GaleriaComponent } from './galeria/galeria.component';
 import { AboutComponent } from './about/about.component';
 import { ReporteComponent } from './reporte/reporte.component';
-import { UnaMascotaComponent } from './una-mascota/una-mascota.component';
-import { SearchComponent } from './search/search.component';
+import { DescComponent } from './desc/desc.component';
+import { VentaComponent } from './venta/venta.component';
+import { DevolucionComponent } from './devolucion/devolucion.component';
+import { AgregarComponent } from './agregar/agregar.component';
 
 
 export const routes: Routes = [
     {path: '', redirectTo: '/home', pathMatch: 'full'},
     {path: 'home', component: HomeComponent},
-    {path: 'adopta', component: AdoptaComponent},
-    {path: 'galeria', component: GaleriaComponent},
-    {path: 'about', component: AboutComponent},
-    {path: 'reporte', component: ReporteComponent},
-    {path: 'mascota/:id', component: UnaMascotaComponent},
-    {path: 'buscador/:razam', component: SearchComponent},
+    {path: 'consulta', component: AdoptaComponent},
+    {path: 'alta', component: GaleriaComponent},
+    {path: 'modificar', component: AboutComponent},
+    {path: 'baja', component: ReporteComponent},
+    {path: 'desc', component: DescComponent},
+    {path: 'venta', component: VentaComponent},
+    {path: 'devolucion', component: DevolucionComponent},
+    {path: 'agregar', component: AgregarComponent}
 ];

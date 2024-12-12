@@ -1,135 +1,131 @@
-.carousel-inner .carousel-item img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  border-radius: 20px;
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-  #informacion {
-    max-width: 100%;
-    background-color: #b99d81;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  h2 {
-    color: black;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  p {
-    color: black;
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
-  
-  .Como-Adoptar {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-  }
-  
-  .Adoptar-ImgP {
-    text-align: center;
-  }
-  
-  .Adoptar-ImgP img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    margin-bottom: 10px;
-    border-radius: 80%;
-  }
-  
-  .Adoptar-ImgP h3 {
-    color: #333;
-    margin-bottom: 5px;
-  }
-  
-  .ImagenesGatoPerro {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-
-  }
-  
-  .ImagenesGatoPerro img {
-    max-width: 300px;
-    max-height: 200px; 
-    margin: 50px;
-    box-sizing: border-box;
-  }
-  
-  .btnAdoptar{
-    background-image: linear-gradient(to right, #AF8260, #803D3B); 
-    color: #fff;
-    padding: 20px 40px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 20px;
-    margin-bottom: 20px; 
-    transition: transform 0.3s ease, background-color 0.3s ease;     
-  }
-
-/* Efecto hover */
-
-.btnAdoptar:hover {
-  transform: translateY(-5px); 
-  background-color: #645A52; 
-}
-
-.btnAdoptar:active {
-  transform: scale(0.95);
-  transition: transform 0.2s ease;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-main{
-  width: 90%;
+/* Contenedor principal */
+.containerAdopta {
+  width: 80%;
   margin: auto;
-  border-radius: 15px;
-  background-color: #AF8260;
   padding: 40px;
-  border: black 2px dashed;
-
+  background-color: #deac80; /* Color de fondo de las demás páginas */
+  color: #4d3c2d; /* Color de fuente */
+  border-radius: 15px;
+  border: 2px solid #000000;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease-in-out;
   box-shadow: 1px 3px 4px black;
 }
 
-
-hr{
-  border: dashed 2px black;
-  margin: 40px;
-  color: #AF8260;
+/* Títulos */
+h2, h3 {
+  text-align: center;
+  color: #4d3c2d; /* Color de fuente */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.videoAdopcion {
-  width: 60%;
-  margin: auto;
-  
+/* Línea de separación */
+hr {
+  border: 2px dashed #000000;
+  margin: 20px 0;
 }
 
-iframe{
-  border-radius: 15px;
+/* Estilos de los campos del formulario */
+label {
+  color: black;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  display: block;
 }
 
-.videoWrapper {
-  position: relative;
-  padding-bottom: 56.25%; /* Proporción 16:9 para videos */
-  height: 0;
-  overflow: hidden;
-}
-
-.videoWrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
+select, input {
   width: 100%;
-  height: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border-radius: 5px;
+  border: white;
+  background-color: #F1F1F1;
+  color: #333;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+select:focus, input:focus {
+  border-color: #4A90E2;
+  box-shadow: 0 0 10px rgba(74, 144, 226, 0.2);
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+  background-color: #4d3c2d; /* Color de fondo de las demás páginas */
+  color: white;
+}
+
+/* Estilos para el botón "Ejecutar" */
+
+/* Estilo para los botones en general */
+button:hover {
+  background-color: #f7dcb9;
+  color: black;
+}
+
+/* Mensajes de éxito o error */
+.alert {
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.alert-success {
+  background-color: #4d3c2d; /* Color de fuente */
+  color: white;
+}
+
+.alert-danger {
+  background-color: #F44336;
+  color: white;
+}
+
+/* Tabla de resultados */
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #ffffff; /* Color de fondo del header */
+  color: #4d3c2d; /* Color de fuente */
+}
+
+td {
+  background-color: #ffffff; /* Color de fondo de las demás páginas */
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
 }

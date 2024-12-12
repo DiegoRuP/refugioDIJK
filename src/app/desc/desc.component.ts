@@ -1,22 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AdopcionesService } from '../shared/adopciones.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-adopta',
+  selector: 'app-desc',
   standalone: true,
-  templateUrl: './adopta.component.html',
-  styleUrls: ['./adopta.component.css'],
   imports: [CommonModule, FormsModule],
+  templateUrl: './desc.component.html',
+  styleUrls: ['./desc.component.css'],
 })
-export class AdoptaComponent {
+export class DescComponent implements OnInit {
   tablas: string[] = [];
   tablaSeleccionada: string = '';
-  datosTabla: any[] = [];
-  columnas: string[] = [];
+  estructuraTabla: any[] = [];
 
-  constructor(public adopcionesService: AdopcionesService) {}
+  constructor(private adopcionesService: AdopcionesService) {}
 
   ngOnInit(): void {
     this.recuperarTablas();
@@ -31,20 +30,15 @@ export class AdoptaComponent {
     });
   }
 
-  mostrarDatos() {
+  cargarEstructuraTabla() {
     if (this.tablaSeleccionada) {
-      this.adopcionesService.obtenerDatosTabla(this.tablaSeleccionada).subscribe({
+      this.adopcionesService.obtenerEstructuraTabla(this.tablaSeleccionada).subscribe({
         next: (data) => {
-          if (data.length > 0) {
-            this.columnas = Object.keys(data[0]);
-            this.datosTabla = data;
-          } else {
-            this.columnas = [];
-            this.datosTabla = [];
-          }
+          console.log('Datos recibidos del backend:', data);
+          this.estructuraTabla = data;
         },
-        error: (err) => console.error('Error al recuperar datos de la tabla:', err),
+        error: (err) => console.error('Error al cargar la estructura de la tabla:', err),
       });
     }
-  }
+  }  
 }
